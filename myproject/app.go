@@ -5,9 +5,9 @@ import (
 )
 
 func main(){
-     a := []int{4,3,7,1,2}
+     a := [5]int{4,3,3,1,2}
   
-	a = append(a, 13)
+	a[2] = 2
 
 	fmt.Println(a)
 }
