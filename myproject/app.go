@@ -1,26 +1,16 @@
 package main
 
 import (
-	"errors"
-	"fmt"
-	"math"
+ "fmt"
 )
 
+type person struct {
+	name string
+	age int
+}
+
 func main(){
- result, err := sqr(6)
-
- if err != nil{
-	fmt.Println(err)
- }else{
-	fmt.Println(result)
- }
-
+	p := person{name: "Rudiger", age: 22}
+	fmt.Println(p)
 }
 
-func sqr(x float64)(float64,error) {
-	if x < 0 {
-		return 0, errors.New("undefined for negative numbaers")
-	}
-
-	return math.Sqrt(x),nil
-}
