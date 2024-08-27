@@ -5,13 +5,9 @@ import (
 )
 
 func main(){
-  vertices := make(map[string]int)
+     a := []int{4,3,7,1,2}
+  
+	a = append(a, 13)
 
-  vertices["triangle"] =2
-  vertices["square"] = 3
-  vertices["dodecagon"] = 12
-
-  delete(vertices,"triangle")
-
-  fmt.Println(vertices)
+	fmt.Println(a)
 }
