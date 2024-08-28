@@ -1,16 +1,32 @@
 package main
 
 import (
- "fmt"
+	"fmt"
+	"sync"
+	"time"
 )
 
 
 func main(){
-  i := 7
-  inc(&i)
-fmt.Println(i)
+   var wg sync.WaitGroup
+   wg.Add(1)
+
+  go func ()  {
+    count("sheep")
+    wg.Done()
+
+  }()
+
+  wg.Wait()
 }
 
-func inc(x *int){
-   *x++
+
+func count(thing string){
+   for i := 0; i <= 5; i++ {
+    fmt.Println(i,thing)
+    time.Sleep(time.Millisecond * 500)
+   }
+
+
+
 }
